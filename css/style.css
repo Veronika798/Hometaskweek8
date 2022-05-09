@@ -1,0 +1,122 @@
+:root{
+    --my-padding: 0.4rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    color: rgb(253, 255, 255);
+    display: grid;
+    font-family: 'Fredoka One', cursive;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "banner banner banner";
+}
+
+.menu {
+    background-color: rgb(206, 22, 22);
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.header{
+    background-color: black;
+    grid-area: header;
+    padding: var(--my-padding);
+}
+
+.hero{
+    background-color: rgb(144, 144, 201);
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.main{
+    background-color: rgb(119, 45, 45);
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.image{
+    background-color: grey;
+    grid-area: image;
+    padding: var(--my-padding);
+
+}
+
+.banner{
+    background-color: orangered;
+    grid-area: banner;
+    padding: var(--my-padding);
+}
+
+.extra{
+    background-color: green;
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+@media(max-width: 1024px){
+
+    .header{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr
+    }
+
+    .container{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+
+        grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra image"
+        ;
+
+    }
+}
+
+@media(max-width: 480px){
+
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image";
+    }
+
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+    }
+
+    .header{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr;
+    }
+
+}
+
